@@ -26,4 +26,17 @@ Quantifiers:
 
 #### Sample Regexs ####
 
-[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+
+import re
+text = '''yogeshreddyus@gmail.com
+GVDkreddy@gmail.com
+Mr D
+yogesh.gongati@uconn.edu
+Ms. Sneha
+sneha1990@123.com
+Mrs Padmavathi
+Mr. Y'''
+
+pattern = re.compile(r'[\w\d.-_]+@\w+\.(com|edu|net)')
+matches =pattern.finditer(text)
+for match in matches:
+    print(match)
